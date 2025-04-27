@@ -1,0 +1,193 @@
+{{ define "main" }}
+{{/*  hero section  */}}
+{{ $hero := "images/dev/hero-cover.png" | relURL }}
+<section class="min-h-[860px] flex justify-center items-center w-full bg-center bg-no-repeat bg-cover bg-[url({{ $hero }})]">
+    <div class="lg:max-w-[683px] px-4 mx-auto space-y-10 text-center">
+        <div class="space-y-4">
+            <h1 class="font-urbanist text-white font-black text-[64px] lg:text-[80px] leading-[68px] lg:leading-[72px] tracking-[-2%] uppercase">SLOWYN GAMES</h1>
+            <p class="font-urbanist text-white font-medium text-[22px] leading-[30px]">A mobile game development company powered by a decentralized network of top talent.</p>
+        </div>
+        <div>
+            <a 
+                href=""
+                class="px-8 py-3 bg-light-sky text-white rounded-full inline-flex justify-center items-center gap-x-2 group">
+                <span class="font-urbanist font-semibold leading-6">Contact Us</span>
+                <svg class="size-3 lg:size-3 text-inherit transition-all group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <path class="fill-current" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+{{/*  end hero section  */}}
+
+{{/*  services section  */}}
+<section class="px-4 py-16">
+    <div class="container mx-auto lg:flex justify-center items-center">
+        <div class="space-y-6 lg:w-1/2 lg:mr-40">
+            <div class="space-y-4">
+                <h3 class="font-urbanist font-bold text-[40px] lg:text-[56px] leading-12 lg:leading-16 tracking-[-3%] text-black">Our Cutting-Edge Game Development Solutions</h3>
+                <p class="font-urbanist font-medium text-lg leading-7 tracking-[1%] text-black"><strong>Slowyn Games</strong> is built on a decentralized production model, designed to offer flexibility, responsiveness, and instant access to top specialized talent from around the world. For every project, we assemble a custom-built team, precisely tailored to the needs, goals, and style of the game to be developed.</p>
+            </div>
+            <div class="flex items-center gap-x-2.5 p-2.5 bg-light-slate-gray w-fit">
+                <div>
+                    <div class="size-7.5 rounded-full bg-light-sky flex justify-center items-center">
+                        {{ $quotes := "images/dev/quotes.svg" | relURL }}
+                        <div class="size-4">
+                            <img src="{{ $quotes }}" class="size-full object-contain">
+                        </div>
+                    </div>
+                </div>
+                <span class="font-urbanist italic font-semibold text-xl leading-7 tracking-[-1%] text-black">“Your vision is unique — your team should be too.”</span>
+            </div>
+            <p class="font-urbanist font-medium text-lg leading-7 tracking-[1%] text-black">We collaborate with world-class designers, developers, and artists to deliver high-quality projects tailored to your vision. Acting as the bridge between creativity and execution, we ensure every game we craft captivates and inspires.</p>
+        </div>
+        <div class="lg:w-1/2">
+            {{ $solution_img := "images/solutions-img.png" | relURL }}
+            <img src="{{ $solution_img }}" alt="" class="size-full">
+        </div>
+    </div>
+</section>
+{{/*  end services section  */}}
+
+{{/*  cta section  */}}
+<section class="px-4 py-16 bg-gradient-to-br from-light-sky to-dark-sky">
+    <div class="max-w-[398px] lg:max-w-[963px] mx-auto flex flex-col lg:flex-row justify-center lg:justify-between items-center text-center gap-y-6">
+        {{ $right_arrow := "images/dev/right-curvey-arrow.svg" | relURL }}
+        <h3 class="font-urbanist text-[28px] leading-[37px] tracking-[-1%] text-black uppercase">Let’s make your game <span class="font-black">unforgettable.</span></h3>
+        <div class="hidden lg:block">
+            <img src="{{ $right_arrow }}" alt="" class="w-full object-contain">
+        </div>
+        <a 
+            href=""
+            class="px-8 py-4 inline-flex justify-center items-center gap-x-2 rounded-full bg-night-gray text-white group">
+            <span class="font-urbanist font-semibold leading-4">Contact us</span>
+            <svg class="size-3 lg:size-3 text-inherit transition-all group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <path class="fill-current" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/>
+            </svg>
+        </a>
+    </div>
+</section>
+{{/*  end cta section  */}}
+
+{{/*  services section  */}}
+<section class="px-4 py-16 bg-dark-blue relative">
+    {{ $services_bg := "images/dev/services-bg.png" | relURL }}
+    <img src="{{ $services_bg }}" alt="" class="absolute left-0 right-0 bottom-0 size-full">
+    <div class="container mx-auto space-y-10 relative z-10">
+        <div class="space-y-4 text-center lg:max-w-[690px] mx-auto">
+            <h3 class="font-urbanist font-bold text-[40px] lg:text-[56px] leading-12 lg:leading-16 tracking-[-3%] text-white">Our Services</h3>
+            <p class="font-urbanist font-medium text-lg leading-7 tracking-[-1%] text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a auctor leo. Morbi eu egestas elit. Aenean sit amet leo eget arcu sodales viverra. </p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-5 lg:gap-7.5">
+
+            <div class="border-gradient after:rounded-lg p-[1px]">
+                <div class="space-y-4 p-7 bg-gradient-to-tl from-dark-blue to-light-blue from-60% rounded-lg relative z-10">
+                    <div class="flex gap-x-4 items-center">
+                        <div>
+                            <div class="size-14">
+                                {{ $icon := "images/game-dev-cycle.svg" | relURL }}
+                                <img src="{{ $icon }}" alt="" class="size-full object-contain">
+                            </div>
+                        </div>
+                        <h4 class="font-urbanist font-bold text-2xl leading-[30px] text-white">Full-Cycle Game Development</h4>
+                    </div>
+                    <p class="font-urbanist font-medium text-lg leading-7 tracking-[1%] text-white">From concept to launch, we manage every step of the game development process. We deliver highperformance games using industry-leading tools like Unity and Unreal Engine. Our games are built to work seamlessly across platforms, including iOS and Android, ensuring maximum reach.</p>
+                </div>
+            </div>
+
+            <div class="border-gradient after:rounded-lg p-[1px]">
+                <div class="space-y-4 p-7 bg-gradient-to-tl from-dark-blue to-light-blue from-60% rounded-lg relative z-10">
+                    <div class="flex gap-x-4 items-center">
+                        <div>
+                            <div class="size-14">
+                                {{ $icon := "images/game-dev-cycle.svg" | relURL }}
+                                <img src="{{ $icon }}" alt="" class="size-full object-contain">
+                            </div>
+                        </div>
+                        <h4 class="font-urbanist font-bold text-2xl leading-[30px] text-white">Full-Cycle Game Development</h4>
+                    </div>
+                    <p class="font-urbanist font-medium text-lg leading-7 tracking-[1%] text-white">From concept to launch, we manage every step of the game development process. We deliver highperformance games using industry-leading tools like Unity and Unreal Engine. Our games are built to work seamlessly across platforms, including iOS and Android, ensuring maximum reach.</p>
+                </div>
+            </div>
+
+            <div class="border-gradient after:rounded-lg p-[1px]">
+                <div class="space-y-4 p-7 bg-gradient-to-tl from-dark-blue to-light-blue from-60% rounded-lg relative z-10">
+                    <div class="flex gap-x-4 items-center">
+                        <div>
+                            <div class="size-14">
+                                {{ $icon := "images/game-dev-cycle.svg" | relURL }}
+                                <img src="{{ $icon }}" alt="" class="size-full object-contain">
+                            </div>
+                        </div>
+                        <h4 class="font-urbanist font-bold text-2xl leading-[30px] text-white">Full-Cycle Game Development</h4>
+                    </div>
+                    <p class="font-urbanist font-medium text-lg leading-7 tracking-[1%] text-white">From concept to launch, we manage every step of the game development process. We deliver highperformance games using industry-leading tools like Unity and Unreal Engine. Our games are built to work seamlessly across platforms, including iOS and Android, ensuring maximum reach.</p>
+                </div>
+            </div>
+
+            <div class="border-gradient after:rounded-lg p-[1px]">
+                <div class="space-y-4 p-7 bg-gradient-to-tl from-dark-blue to-light-blue from-60% rounded-lg relative z-10">
+                    <div class="flex gap-x-4 items-center">
+                        <div>
+                            <div class="size-14">
+                                {{ $icon := "images/game-dev-cycle.svg" | relURL }}
+                                <img src="{{ $icon }}" alt="" class="size-full object-contain">
+                            </div>
+                        </div>
+                        <h4 class="font-urbanist font-bold text-2xl leading-[30px] text-white">Full-Cycle Game Development</h4>
+                    </div>
+                    <p class="font-urbanist font-medium text-lg leading-7 tracking-[1%] text-white">From concept to launch, we manage every step of the game development process. We deliver highperformance games using industry-leading tools like Unity and Unreal Engine. Our games are built to work seamlessly across platforms, including iOS and Android, ensuring maximum reach.</p>
+                </div>
+            </div>
+
+            <div class="border-gradient after:rounded-lg p-[1px]">
+                <div class="space-y-4 p-7 bg-gradient-to-tl from-dark-blue to-light-blue from-60% rounded-lg relative z-10">
+                    <div class="flex gap-x-4 items-center">
+                        <div>
+                            <div class="size-14">
+                                {{ $icon := "images/game-dev-cycle.svg" | relURL }}
+                                <img src="{{ $icon }}" alt="" class="size-full object-contain">
+                            </div>
+                        </div>
+                        <h4 class="font-urbanist font-bold text-2xl leading-[30px] text-white">Full-Cycle Game Development</h4>
+                    </div>
+                    <p class="font-urbanist font-medium text-lg leading-7 tracking-[1%] text-white">From concept to launch, we manage every step of the game development process. We deliver highperformance games using industry-leading tools like Unity and Unreal Engine. Our games are built to work seamlessly across platforms, including iOS and Android, ensuring maximum reach.</p>
+                </div>
+            </div>
+
+            <div class="border-gradient after:rounded-lg p-[1px]">
+                <div class="space-y-4 p-7 bg-gradient-to-tl from-dark-blue to-light-blue from-60% rounded-lg relative z-10">
+                    <div class="flex gap-x-4 items-center">
+                        <div>
+                            <div class="size-14">
+                                {{ $icon := "images/game-dev-cycle.svg" | relURL }}
+                                <img src="{{ $icon }}" alt="" class="size-full object-contain">
+                            </div>
+                        </div>
+                        <h4 class="font-urbanist font-bold text-2xl leading-[30px] text-white">Full-Cycle Game Development</h4>
+                    </div>
+                    <p class="font-urbanist font-medium text-lg leading-7 tracking-[1%] text-white">From concept to launch, we manage every step of the game development process. We deliver highperformance games using industry-leading tools like Unity and Unreal Engine. Our games are built to work seamlessly across platforms, including iOS and Android, ensuring maximum reach.</p>
+                </div>
+            </div>
+
+            <div class="border-gradient after:rounded-lg p-[1px]">
+                <div class="space-y-4 p-7 bg-gradient-to-tl from-dark-blue to-light-blue from-60% rounded-lg relative z-10">
+                    <div class="flex gap-x-4 items-center">
+                        <div>
+                            <div class="size-14">
+                                {{ $icon := "images/game-dev-cycle.svg" | relURL }}
+                                <img src="{{ $icon }}" alt="" class="size-full object-contain">
+                            </div>
+                        </div>
+                        <h4 class="font-urbanist font-bold text-2xl leading-[30px] text-white">Full-Cycle Game Development</h4>
+                    </div>
+                    <p class="font-urbanist font-medium text-lg leading-7 tracking-[1%] text-white">From concept to launch, we manage every step of the game development process. We deliver highperformance games using industry-leading tools like Unity and Unreal Engine. Our games are built to work seamlessly across platforms, including iOS and Android, ensuring maximum reach.</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+{{/*  end services section  */}}
+{{ end }}
