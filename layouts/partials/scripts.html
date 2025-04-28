@@ -1,4 +1,6 @@
-{{ $bundle := resources.Get "js/main.js" }}
+{{ $swiper := resources.Get "js/swiper.min.js" }}
+{{ $main := resources.Get "js/main.js" }}
+{{ $bundle := slice $swiper $main | resources.Concat "js/bundle.js" }}
 {{ with $bundle }}
   {{ $opts := dict
     "minify" hugo.IsProduction

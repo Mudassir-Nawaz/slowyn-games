@@ -46,3 +46,7 @@
 .lg-border-gradient::after {
     @apply lg:content-[''] lg:absolute lg:inset-0 lg:bg-gradient-to-tl lg:from-purple lg:to-light-sky lg:from-80%;
 }
+
+.after-line {
+   @apply before:content-[''] before:absolute before:bg-off-white before:px-[1px] before:h-20 before:-bottom-20;
+}

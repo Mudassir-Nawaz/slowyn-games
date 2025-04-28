@@ -1,5 +1,7 @@
 {{ with (templates.Defer (dict "key" "global")) }}
-{{ $bundle := resources.Get "css/main.css" }}
+{{ $swiper := resources.Get "css/swiper.min.css" }}
+{{ $main := resources.Get "css/main.css" }}
+{{ $bundle := slice $swiper $main | resources.Concat "css/bundle.css" }}
   {{ with $bundle }}
     {{ $opts := dict
       "minify" hugo.IsProduction

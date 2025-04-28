@@ -275,4 +275,136 @@
     </div>
 </section>
 {{/*  end projects section  */}}
+
+{{/*  faqs section  */}}
+<section class="px-4 py-16 bg-dark-blue">
+    <div class="container mx-auto space-y-10">
+        <div class="text-center">
+            <h3 class="font-urbanist font-bold text-[40px] lg:text-[56px] leading-12 lg:leading-16 tracking-[-3%] text-white">Frequently Asked Questions</h3>
+        </div>
+        <ul class="space-y-4 lg:max-w-[1170px] mx-auto">
+            <li class="border-gradient after:rounded-lg p-[1px]">
+                <div class="px-7 py-[21px] bg-gradient-to-tl from-dark-blue to-light-blue from-60% rounded-lg relative z-10" data-faq-id="faq-1">
+                    <button
+                        class="faq-toggle relative flex gap-x-4 justify-between items-start w-full text-left cursor-pointer"
+                        aria-expanded="false" onclick="toggleFAQ(this, 'faq-1')">
+                        <span class="font-urbanist font-bold text-xl leading-[30px] text-white">How much does it cost to develop a mobile game?</span>
+                        <div class="size-6 mt-2">
+                            {{ $plus := "images/dev/plus-icon.svg" | relURL }}
+                            <img src="{{ $plus }}" alt="" class="faq-icon transition-all size-3.5 object-contain">
+                        </div>
+                    </button>
+                    <div class="faq-content transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
+                        style="transition: max-height 0.3s ease-in-out 0s;">
+                        <div class="pt-2 pr-5">
+                            <div class="font-urbanist font-medium text-lg leading-7 tracking-[1%] text-white">
+                                The cost of mobile game development depends on many factors: gameplay complexity, 2D or 3D graphics, number of features, integrated monetization, and more. On average, a simple mobile game can cost between €10,000 and €20,000, while a more ambitious project can exceed €50,000. We provide personalized quotes tailored to your budget.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+      function toggleFAQ(clickedButton, id) {
+        const faqItems = document.querySelectorAll('[data-faq-id]');
+        let shouldExpandTarget = true;
+    
+        // First pass: determine if the clicked one is already expanded
+        faqItems.forEach(item => {
+          if (item.dataset.faqId === id) {
+            const btn = item.querySelector('.faq-toggle');
+            shouldExpandTarget = btn.getAttribute("aria-expanded") !== "true";
+          }
+        });
+    
+        // Second pass: collapse all, then optionally expand clicked one
+        faqItems.forEach(item => {
+          const btn = item.querySelector('.faq-toggle');
+          const content = item.querySelector('.faq-content');
+          const icon = item.querySelector('.faq-icon');
+    
+          const isTarget = item.dataset.faqId === id;
+    
+          if (btn && content && icon) {
+            btn.setAttribute("aria-expanded", "false");
+            content.style.maxHeight = "0";
+            icon.classList.remove('rotate-45');
+    
+            // Expand only the target item if needed
+            if (isTarget && shouldExpandTarget) {
+              btn.setAttribute("aria-expanded", "true");
+              content.style.maxHeight = content.scrollHeight + "px";
+              icon.classList.add('rotate-45');
+            }
+          }
+        });
+      }
+    </script>
+</section>
+{{/*  end faqs section  */}}
+
+{{/*  form section  */}}
+<section class="pt-16 lg:pt-24">
+    <div class="container mx-auto space-y-10 lg:grid lg:grid-cols-2 lg:gap-x-32">
+        <div class="space-y-5 px-4">
+            <div class="space-y-3">
+                <h3 class="font-urbanist font-bold text-4xl lg:text-5xl leading-10 lg:leading-12 tracking-[-3%] text-black">You’re just a few steps away from creating your game.</h3>
+                <p class="font-urbanist font-medium text-lg leading-7 tracking-[1%] text-black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a auctor leo. Morbi eu egestas elit. </p>
+            </div>
+            <div class="space-y-7">
+                <div class="flex gap-x-4 items-center">
+                    <div>
+                        <div class="size-14 rounded-full bg-light-gray border border-off-white flex justify-center items-center relative after-line">
+                            <span class="font-urbanist font-extrabold text-xl text-black">01</span>
+                        </div>
+                    </div>
+                    <p class="font-urbanist font-medium text-lg leading-7 tracking-[1%] text-black"><strong>First contact – </strong>You present your idea to us.</p>
+                </div>
+
+                <div class="flex gap-x-4 items-center">
+                    <div>
+                        <div class="size-14 rounded-full bg-light-gray border border-off-white flex justify-center items-center relative after-line">
+                            <span class="font-urbanist font-extrabold text-xl text-black">02</span>
+                        </div>
+                    </div>
+                    <p class="font-urbanist font-medium text-lg leading-7 tracking-[1%] text-black"><strong>Discovery phase – </strong>We dive deeper into your project to understand your needs and vision.</p>
+                </div>
+
+                <div class="flex gap-x-4 items-center">
+                    <div>
+                        <div class="size-14 rounded-full bg-light-gray border border-off-white flex justify-center items-center relative">
+                            <span class="font-urbanist font-extrabold text-xl text-black">03</span>
+                        </div>
+                    </div>
+                    <p class="font-urbanist font-medium text-lg leading-7 tracking-[1%] text-black"><strong>Discovery phase – </strong>We dive deeper into your project to understan.</p>
+                </div>
+            </div>
+        </div>
+        <form action="" class="px-4 py-8 lg:p-8 space-y-6 bg-light-gray border border-off-white rounded-t-2xl">
+            <h3 class="font-urbanist font-bold text-4xl lg:text-[40px] tracking-[-3%] text-black">Let's talk about your project</h3>
+            <div class="gap-y-2 flex flex-col">
+                <label for="name" class="font-urbanist font-medium leading-5 text-stone">Full Name</label>
+                <input type="text" id="name" required placeholder="Enter Full Name" class="p-3 bg-white border border-darker-gray rounded-lg font-urbanist leading-5.5 text-stone">
+            </div>
+            <div class="gap-y-2 flex flex-col">
+                <label for="email" class="font-urbanist font-medium leading-5 text-stone">Email</label>
+                <input type="email" id="email" required placeholder="Enter Email" class="p-3 bg-white border border-darker-gray rounded-lg font-urbanist leading-5.5 text-stone">
+            </div>
+            <div class="gap-y-2 flex flex-col">
+                <label for="message" class="font-urbanist font-medium leading-5 text-stone">Message</label>
+                <textarea id="message" placeholder="Enter Message" rows="4" class="p-3 bg-white border border-darker-gray rounded-lg font-urbanist leading-5.5 text-stone"></textarea>
+            </div>
+            <button type="submit" class="px-8 py-3 bg-light-sky flex justify-center items-center gap-x-2 font-urbanist font-semibold leading-6 text-white rounded-full cursor-pointer group">
+                <span>Submit</span>
+                <svg class="size-3 lg:size-3 text-inherit transition-all group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <path class="fill-current" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/>
+                </svg>
+            </button>
+        </form>
+    </div>
+</section>
+{{/*  end form section  */}}
 {{ end }}
