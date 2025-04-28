@@ -106,6 +106,7 @@ menus:
 ######### PARAMS
 #######################
 params:
+  logo: images/logo.png
   header:
     cta:
       label: Contact Us

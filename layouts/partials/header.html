@@ -1,8 +1,7 @@
 <header class="fixed w-full bg-navy z-50">
     <div class="container mx-auto px-4 py-2 flex justify-between items-center w-full">
         <nav>
-            {{ $logo := "images/logo.png" | relURL }}
-            <a href="{{ site.BaseURL }}" class="w-[126.42px] h-8"><img src="{{ $logo }}" alt="{{ site.Title }} Logo" class="size-full object-contain"></a>
+            <a href="{{ site.BaseURL }}" class="w-[126.42px] h-8"><img src="{{ site.Params.logo | relURL }}" alt="{{ site.Title }} Logo" class="size-full object-contain"></a>
         </nav>
         <button class="size-8 cursor-pointer toggle-menu lg:hidden">
             {{ $hamburger := "images/dev/hamburger.svg" | relURL }}
