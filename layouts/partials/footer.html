@@ -5,7 +5,7 @@
                 <div>
                     <a href="{{ site.BaseURL }}" class="w-[158px] h-10 block"><img src="{{ site.Params.logo | relURL }}" alt="{{ site.Title }} Logo" class="size-full object-contain"></a>
                 </div>
-                <div class="space-y-7 mt-5">
+                <div class="space-y-7 mt-5 hidden">
                     <p class="font-urbanist font-medium leading-7 tracking-[1%] text-white/60">Slowyn Games is built on a decentralized production model, designed to offer flexibility, responsiveness, and instant access to top specialized talent from around the world.</p>
                     <div class="flex items-center gap-x-6">
                         <div>
@@ -26,11 +26,15 @@
             <div class="mt-10 lg:mt-0 font-urbanist font-medium text-lg leading-6 text-white">
                 <strong>Quick Links</strong>
                 <ul class="mt-5 flex lg:flex-col lg:gap-y-3">
-                    <li><a href="" class="text-white/60">About Us |</a></li>
-                    <li><a href="" class="text-white/60">&nbsp;Services |</a></li>
-                    <li><a href="" class="text-white/60">&nbsp;Projects |</a></li>
-                    <li><a href="" class="text-white/60">&nbsp;Contact Us |</a></li>
-                    <li><a href="" class="text-white/60">&nbsp;FAQ</a></li>
+                    {{ $menu_len := (len site.Menus.footer) }}
+                    {{ range $i, $p := site.Menus.footer }}
+                    <li><a href="{{ $p.URL }}" class="text-white/60 hidden lg:block">{{ $p.Name }}</a></li>
+                    {{ if eq (add $i 1) $menu_len }}
+                    <li><a href="{{ $p.URL }}" class="text-white/60 lg:hidden">&nbsp;{{ $p.Name }}</a></li>
+                    {{ else }}
+                    <li><a href="{{ $p.URL }}" class="text-white/60 lg:hidden">&nbsp;{{ $p.Name }} |</a></li>
+                    {{ end }}
+                    {{ end }}
                 </ul>
             </div>
             <div class="mt-10 lg:mt-0 max-w-[341px]">
@@ -62,7 +66,7 @@
             </div>
         </div>
 
-        <hr class="my-14 bg-white">
+        <div class="my-16 bg-white py-[1px] w-full"></div>
 
         <div class="flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-y-5 font-urbanist font-medium text-lg leading-6 text-white/60">
             <ul class="flex">
