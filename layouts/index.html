@@ -3,7 +3,7 @@
 {{ with .Params.hero_section }}
 {{ if .enable }}
 {{ $hero := "images/dev/hero-cover.png" | relURL }}
-<section class="min-h-[860px] flex justify-center items-center w-full bg-center bg-no-repeat bg-cover bg-[url({{ $hero }})]">
+<section class="min-h-[860px] flex justify-center items-center w-full bg-center bg-no-repeat bg-[url({{ $hero }})]">
     <div class="lg:max-w-[683px] px-4 mx-auto space-y-10 text-center">
         <div class="space-y-4">
             <h1 class="font-urbanist text-white font-black text-[64px] lg:text-[80px] leading-[68px] lg:leading-[72px] tracking-[-2%] uppercase">{{ .title | safeHTML }}</h1>
@@ -122,9 +122,19 @@
             <p class="font-urbanist font-medium text-lg leading-7 tracking-[1%] text-black">{{ .description | safeHTML }}</p>
         </div>
         <div class="lg:flex justify-center items-center lg:gap-x-5">
-            <div class="lg:w-2/3">
+            <div>
                 {{ $projects_img := "images/projects-img.png" | relURL }}
-                <img src="{{ $projects_img }}" alt="" class="size-full object-contain">
+                {{ $character := "images/dev/project-character.png" | relURL }}
+                {{ $char_shadow := "images/dev/character-shadow.png" | relURL }}
+                {{ $project_card := "images/dev/project-card.png" | relURL }}
+                <img src="{{ $projects_img }}" alt="" class="size-full object-contain lg:hidden">
+                <div class="hidden lg:flex justify-center items-end">
+                    <div class="relative z-10">
+                        <img src="{{ $character }}" class="w-[414px] h-[638px] object-contain">
+                        <img src="{{ $char_shadow }}" class="size-full -mt-40">
+                    </div>
+                    <img src="{{ $project_card }}" class="max-w-[583px] h-[439px] -ml-24">
+                </div>
             </div>
             <div class="lg:w-[502px] lg:flex flex-col-reverse lg:gap-y-16">
                 <div class="hidden gap-x-6 items-center justify-center lg:justify-start">
