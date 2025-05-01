@@ -27,6 +27,10 @@
 }
 
 /* custom styles */
+*::selection {
+    @apply bg-light-sky/50 text-white;
+}
+
 .border-gradient {
     @apply relative;
 }

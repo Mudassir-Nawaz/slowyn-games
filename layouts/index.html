@@ -3,7 +3,7 @@
 {{ with .Params.hero_section }}
 {{ if .enable }}
 {{ $hero := "images/dev/hero-cover.png" | relURL }}
-<section class="min-h-[860px] flex justify-center items-center w-full bg-center bg-no-repeat bg-[url({{ $hero }})]">
+<section class="h-[900px] lg:h-[915px] flex justify-center items-center w-full bg-bottom bg-no-repeat bg-[url({{ $hero }})]">
     <div class="lg:max-w-[683px] px-4 mx-auto space-y-10 text-center">
         <div class="space-y-4">
             <h1 class="font-urbanist text-white font-black text-[64px] lg:text-[80px] leading-[68px] lg:leading-[72px] tracking-[-2%] uppercase">{{ .title | safeHTML }}</h1>
